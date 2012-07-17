@@ -1,0 +1,9 @@
+{% extends "mybooru_template.html" %}
+
+{% block title %}MyBooru - Upload an Image{% endblock %}
+{% block body %}
+<form enctype="multipart/form-data" action="/post/" method="POST">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}

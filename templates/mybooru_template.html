@@ -1,0 +1,23 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="/media/booru.css"/>
+<title>{% block title %}MyBooru{% endblock %}</title>
+</head>
+<body>
+<div id="header">{% block header %}
+<div id="topheader">
+MyBooru
+</div>
+<div id="menu">
+<a class="menuitem" href="/search/">Search</a>  
+<a class="menuitem" href="/post/">Post</a>
+</div>
+{% endblock %}
+</div>
+<div id="body">
+{% block body %}
+Welcome to MyBooru!
+{% endblock %}
+</div>
+</body>
+</html>

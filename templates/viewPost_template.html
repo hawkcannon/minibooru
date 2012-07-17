@@ -1,0 +1,24 @@
+{% extends "mybooru_template.html" %}
+
+{% block title %}{% if taglist %}MyBooru - {% for tag in taglist.all %}{{ tag.name }} {% endfor %}
+{% else %}MyBooru - Post not found!{% endif %}{% endblock %}
+{% block body %}<div id="tags">
+{% if taglist %}
+<ul>
+{% for tag in taglist.all %}
+<li>{{ tag.name }}</li>
+{% endfor %}
+</ul>
+Rating: {{ rating }}
+{% else %}
+&nbsp;
+{% endif %}
+</div>
+<div id="content">
+{% if post %}
+<img src="/media/{{ post }}" />
+{% else %}
+<p>No post found!</p>
+{% endif %}
+</div>
+{% endblock %}

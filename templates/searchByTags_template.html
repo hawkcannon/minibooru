@@ -1,0 +1,23 @@
+{% extends "mybooru_template.html" %}
+
+{% block title %}{% if searched and results %}MyBooru - Search Results
+{% elif searched %}MyBooru - No results{% else %}MyBooru - Search{% endif %}{% endblock %}
+{% block body %}
+<div id="content">
+{% if searched and results %}
+{{ results|length }} results: <br />
+{% for post in results %}
+<div class="thumbnail">
+<a href="/view/{{ post.postid }}"><img src="/media/{{ post.post }}" /></a>
+</div>
+{% endfor %}
+{% elif searched %}
+No results!
+{% else %}
+<form enctype="multipart/form-data" action="/search/" method="POST">
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+{% endif %}
+</div>
+{% endblock %}
