@@ -1,0 +1,7 @@
+This is a (rather crude) booru written in Python with Django. It's mostly meant for use by individuals
+and not public servers, so there are a lot of features missing that would be necessary for multi-user systems
+(muliple accounts, removing posts, etc.). That said, it's mostly usable now.
+
+To launch the server, run launch_server.bat, or type ``python manage.py runserver'' in console.
+
+If you delete the database or change the database's structure, type ``python manage.py syncdb'' in console.
